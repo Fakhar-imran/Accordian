@@ -46,3 +46,9 @@
 i.cross {
   display: none;
 }
+
+@media all and (max-width: 780px) {
+  .container {
+    width: 95vw;
+  }
+}
