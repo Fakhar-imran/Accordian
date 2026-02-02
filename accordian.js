@@ -1,18 +1,23 @@
-let plus= document.querySelector(".plus")
-let cross = document.querySelector(".cross")
-let hiddenText = document.querySelector(".hiddenText")
-let accordian = document.querySelector(".accordian")
+let accordians = document.querySelectorAll(".accordian");
 
-plus.onclick = showText
-function showText() {
-  hiddenText.style.display = "block"
-  cross.style.display = "block";
-  plus.style.display = "none";  
+accordians.forEach((acc) => {
+  acc.addEventListener("click", () => {
 
-}
-cross.onclick = hideText
-function hideText() {
-     hiddenText.style.display = "none"
-  cross.style.display = "none";
-  plus.style.display = "block";
-}
+    let hiddenText = acc.nextElementSibling;
+
+    let plus = acc.querySelector(".plus");
+    let cross = acc.querySelector(".cross");
+
+    hiddenText.classList.toggle("active");
+
+    if (hiddenText.classList.contains("active")) {
+      plus.style.display = "none";
+      cross.style.display = "block";
+    } else {
+      plus.style.display = "block";
+      cross.style.display = "none";
+    }
+
+  });
+
+});

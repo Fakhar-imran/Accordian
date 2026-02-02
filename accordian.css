@@ -28,15 +28,20 @@
 .second,
 .third {
   padding: 12px 15px;
+    cursor: pointer;
 }
 
-.hiddenText {
+.showText {
   background-color: white;
   border-right: 1px solid rgb(123, 119, 119);
   border-left: 1px solid rgb(123, 119, 119);
   border-bottom: 1px solid rgb(123, 119, 119);
   border-collapse: collapse;
   display: none;
+}
+
+.showText.active {
+  display: block;
   padding: 12px 15px;
 }
 
@@ -50,5 +55,6 @@ i.cross {
 @media all and (max-width: 780px) {
   .container {
     width: 95vw;
+    margin: auto;
   }
 }
